@@ -7,25 +7,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>App Pomodoro</h1>
+    <div class="container">
+      <h1>App Pomodoro</h1>
 
-    <div class="affichage">
-      <div class="bloc travail">
-        <p>Travail</p>
-        <p class="affichageT"></p>
+      <div class="affichage">
+        <div class="bloc travail">
+          <p>Travail</p>
+          <p class="affichageT"></p>
+        </div>
+        <div class="bloc pause">
+          <p>Repos</p>
+          <p class="affichageP"></p>
+        </div>
       </div>
-      <div class="bloc pause">
-        <p>Repos</p>
-        <p class="affichageP"></p>
-      </div>
-    </div>
 
-    <div class="container-btns">
+      <div class="container-btns">
         <button class="btn b1">Commencer</button>
         <button class="btn b2">Pause</button>
         <button class="btn b3">Réinitialiser</button>
+      </div>
+      <h2></h2>
+      <button class="btn b4">Réinitialiser cycles</button>
     </div>
-    <h2></h2>
-      <script src="app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -4,6 +4,7 @@ const btnGo = document.querySelector(".b1");
 const btnPause = document.querySelector(".b2");
 const btnReset = document.querySelector(".b3");
 const cycles = document.querySelector("h2");
+const btnResetAll = document.querySelector(".b4");
 
 let checkInterval = false;
 let tempsInitial = 5;
@@ -74,6 +75,29 @@ btnGo.addEventListener("click", () => {
       affichagePause.innerText = `${Math.trunc(tempsDeRepos / 60)} : ${
         tempsDeRepos % 60 < 10 ? `0${tempsDeRepos % 60}` : tempsDeRepos % 60
       }`;
+    });
+
+    // réinitialisation de toutes
+
+    btnResetAll.addEventListener("click", () => {
+      clearInterval(timer);
+      checkInterval = false;
+      if(pause === true){
+        pause = !pause;
+        btnPause.innerText = "Pause";
+      }
+      tempsInitial = 5;
+      tempsDeRepos = 3;
+      affichageTravail.innerText = `${Math.trunc(tempsInitial / 60)} : ${
+        tempsInitial % 60 < 10 ? `0${tempsInitial % 60}` : tempsInitial % 60
+      }`;
+      affichagePause.innerText = `${Math.trunc(tempsDeRepos / 60)} : ${
+        tempsDeRepos % 60 < 10 ? `0${tempsDeRepos % 60}` : tempsDeRepos % 60
+      }`;
+      if(nbDeCycles !=0){
+        nbDeCycles = 0;
+        cycles.innerText = `Nombre de cycles : ${nbDeCycles}`;
+      }
     });
 
   } else {
